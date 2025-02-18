@@ -9,6 +9,21 @@
   <title>Mijn eerste EJS applicatie</title>
 </head>
 <body>
-  <h1>Dinosaurussen zijn de max</h1>
+  <h1> <%= title %> </h1>
+  <hr>
+  <p> <%= content %> </p>
+  <hr>
+  <!-- deze is wel zichtbaar -->
+  <% /* niemand weet dat ik repelsteeltje heet */ %>
+  <% if(team) { %>
+    <h3>Maak kennis met ons team:</h3>
+    <ul>
+      <% team.forEach(dino => { %>
+        <li>
+          <%= dino %>
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
 </body>
 </html>
